@@ -1,7 +1,7 @@
 from yattag import Doc
 import imgkit
 
-f = open("web.html", "w")
+f = open("tests/web.html", "w")
 
 doc, tag, text, line = Doc(
     defaults = {'ingredient': ['chocolate', 'coffee']}
@@ -32,4 +32,4 @@ f.write(doc.getvalue())
 
 f.close()
 
-imgkit.from_file('web.html','out.jpg')
+imgkit.from_file('tests/web.html','tests/out.jpg')
