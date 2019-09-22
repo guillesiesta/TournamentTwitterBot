@@ -38,4 +38,4 @@ func eliminatoria(lista_jugadores):
   if(lista_jugadores == 2)
     escribir el tuit de que llega la gran final
 
-  eliminatoria(lista_jugadores)
+  return lista_jugadores
