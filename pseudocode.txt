@@ -12,7 +12,7 @@ func eliminatoria(lista_jugadores,lista_jugadores_eliminados,eliminacion):
   # si sale 0 queda eliminado el jugador local, 1 el jugador visitante
   generarlista de eliminacion (random de tamaño lista_jugadores/2)
   eliminacion = [1,0,0,1,1,1,0...]
-
+d
   for i in eliminacion:
     iteracion = 0
     local=lista_jugadores(iteracion)
