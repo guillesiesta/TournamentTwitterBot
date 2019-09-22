@@ -1,0 +1,40 @@
+
+lista_jugadores = [ [Jugador1: arma1],  [Jugador2: arma2],  [JugadorN: armaN]]
+
+shuffle(lista_jugadores)
+
+lista_jugadores_eliminados = []
+eliminacion = []
+
+func eliminatoria(lista_jugadores,lista_jugadores_eliminados,eliminacion):
+
+  # lista de tamaño lista_jugadores/2, formada por numeros entre 0 y 1
+  # si sale 0 queda eliminado el jugador local, 1 el jugador visitante
+  generarlista de eliminacion (random de tamaño lista_jugadores/2)
+  eliminacion = [1,0,0,1,1,1,0...]
+
+  for i in eliminacion:
+    iteracion = 0
+    local=lista_jugadores(iteracion)
+    visitante=lista_jugadores(iteracion+1)
+    if(i==0)
+      lista_jugadores_eliminados.add(local)
+      tuit = "Jugador"+visitante+ ha asesinado a + local + "usando su"+visitante.getArma
+      generarHTML()
+    else
+      lista_jugadores_eliminados.add(visitante)
+      tuit = "Jugador"+local+ ha asesinado a + visitante + "usando su"+local.getArma
+      generarHTML()
+
+    borrar lista_jugadores_eliminados de lista_jugadores
+    lista_jugadores_eliminados.clear
+    eliminacion.clear
+    iteracion = iteracion + 2
+  end
+
+    if(lista_jugadores == 2)
+      escribir el tuit de que llega la gran final
+
+    escribir tuit cogiendo imagen y el string tuit
+
+    eliminatoria(lista_jugadores, lista_jugadores_eliminados,)
