@@ -52,4 +52,5 @@ imgkit.from_file('tests/web.html','tests/out.jpg')
 
 # update the status
 #api.update_status(status ="Hello Everyone !")
+
 api.update_with_media('tests/out.jpg', status="Hello World !")
