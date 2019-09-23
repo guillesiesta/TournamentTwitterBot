@@ -37,8 +37,9 @@ def eliminatorias(lista_jugadores,torneo,ronda):
         lista_jugadores_eliminados.append(jugador_eliminado)
 
         torneo["BattleRoyale"]["ronda"+str(ronda)]["lucha"+str(lucha)]={local:lista_jugadores.get(local,None),visitante:lista_jugadores.get(visitante,None)}
-        with open("file.json", "wb") as f:
-            f.write(json.dumps(torneo).encode("utf-8"))
+        with open("file.json", "w") as f:
+            #f.write(json.dumps(torneo).encode("utf-8"))
+            json.dump(torneo, f)
 
         if(jugador_eliminado==local):
             print(visitante+" ha asesinado a "+local+" usando "+lista_jugadores.get(visitante,None))
