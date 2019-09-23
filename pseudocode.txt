@@ -39,3 +39,4 @@ func eliminatoria(lista_jugadores):
     escribir el tuit de que llega la gran final
 
   return lista_jugadores
+
