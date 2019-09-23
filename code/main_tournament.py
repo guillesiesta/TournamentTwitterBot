@@ -43,13 +43,13 @@ def eliminatorias(lista_jugadores,torneo,ronda):
 
         if(jugador_eliminado==local):
             print(visitante+" ha asesinado a "+local+" usando "+lista_jugadores.get(visitante,None))
-            torneo["BattleRoyale"]["ronda"+str(ronda)]["lucha"+str(lucha)]={local:lista_jugadores.get(local,None),visitante:lista_jugadores.get(visitante,None), "process":True}
+            torneo["BattleRoyale"]["ronda"+str(ronda)]["lucha"+str(lucha)]={local:lista_jugadores.get(local,None),visitante:lista_jugadores.get(visitante,None),"gana":visitante,"process":True}
             #generarJSON
             #capturar imagen de website
             #escribir tuit
         else:
             print(local+" ha asesinado a "+visitante+" usando "+lista_jugadores.get(local,None))
-            torneo["BattleRoyale"]["ronda"+str(ronda)]["lucha"+str(lucha)]={local:lista_jugadores.get(local,None),visitante:lista_jugadores.get(visitante,None), "process":True}
+            torneo["BattleRoyale"]["ronda"+str(ronda)]["lucha"+str(lucha)]={local:lista_jugadores.get(local,None),visitante:lista_jugadores.get(visitante,None),"gana":local, "process":True}
             #generarJSON
             #capturar imagen de website
             #escribir tuit
