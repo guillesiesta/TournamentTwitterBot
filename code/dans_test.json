@@ -1,0 +1,50 @@
+{
+  "torneo" : "Hacker Battle Royale",
+  "rondas": [
+    {
+        "ronda": 1,
+        "combates": [
+            {
+                "local" : "broncano",
+                "visitante" : "lusesita",
+                "fecha" : "2019-09-23 14:24:93",
+                "ganador" : "local"
+            }
+        ]
+    }
+],
+  "jugadores": [
+       {
+        "alias" : "lusesitas",
+        "arma" : "quesadilla"
+       },
+       {
+        "alias" : "juanito",
+        "arma" : "chiste"
+       },
+       {
+        "alias" : "elias",
+        "arma" : "cebolla"
+       },
+       {
+        "alias" : "josete",
+        "arma" : "mochillo"
+       },
+       {
+        "alias" : "broncano",
+        "arma" : "navaja"
+       },
+       {
+        "alias" : "guille",
+        "arma" : "alpargata"
+       },
+       {
+        "alias" : "paco",
+        "arma" : "pelota"
+       },
+       {
+        "alias" : "pablo",
+        "arma" : "aburrimiento"
+       }
+    ]
+}
