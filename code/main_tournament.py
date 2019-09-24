@@ -4,7 +4,7 @@ from esqueleto_torneo import crearEsqueleto
 import time
 import json
 
-def eliminatorias(lista_jugadores,torneo,ronda):
+def eliminatorias(lista_jugadores,torneo,ronda,url):
 
     #lista donde guardaré los jugadores que se van a eliminar
     lista_jugadores_eliminados = []
@@ -55,7 +55,7 @@ def eliminatorias(lista_jugadores,torneo,ronda):
                 #escribir tuit
             torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)]["ganador"] = ganador
             torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)]["procesado"] = True
-            with open("file.json", "w") as f:
+            with open(url, "w") as f:
                 #f.write(json.dumps(torneo).encode("utf-8"))
                 json.dump(torneo, f)
 
@@ -70,10 +70,11 @@ def eliminatorias(lista_jugadores,torneo,ronda):
     print("Los jugadores "+str(list(lista_jugadores))+" pasan a la siguiente ronda. Enhorabuena.")
 
     ronda=ronda+1
-    return(eliminatorias(lista_jugadores,torneo,ronda))
+    return(eliminatorias(lista_jugadores,torneo,ronda,url))
 
 #cargo esqueleto/modelo de torneo con jugadores ya metidos en el json
-torneo = crearEsqueleto("file.json")
+url= "test.json"
+torneo = crearEsqueleto(url)
 
 #extraigo la lista de jugadores
 lista_jugadores = torneo["jugadores"]
@@ -86,7 +87,4 @@ lista_jugadores = shuffleDict(lista_jugadores)
 
 ronda=1
 #lanzo el proceso recursivo de eliminatoria
-eliminatorias(lista_jugadores,torneo,ronda)
-
-'''if(torneo["BattleRoyale"]["ronda_1"]["combate_1"].get("procesado") == False):
-    print(type(torneo["BattleRoyale"]["ronda_1"]["combate_1"].get("procesado")))'''
+eliminatorias(lista_jugadores,torneo,ronda,url)
