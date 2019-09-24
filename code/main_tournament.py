@@ -1,6 +1,6 @@
 from randomdict import shuffleDict
 from random import choice
-from esqueleto_torneo import crearEsqueleto
+from esqueleto_torneo import crearEsqueleto, cargarJson
 import time
 import json
 
@@ -8,11 +8,6 @@ def eliminatorias(lista_jugadores,torneo,ronda,url):
 
     #lista donde guardaré los jugadores que se van a eliminar
     lista_jugadores_eliminados = []
-
-    if(len(lista_jugadores)==1):
-        print("FINAL-------------------------------------------------------------------------------------------")
-        print("El ganador es "+str(list(lista_jugadores)))
-        return ""
 
     print("RONDA_"+str(ronda)+"---------------------------------------------------------------------------------")
     #extraigo las rondas totales
@@ -31,6 +26,7 @@ def eliminatorias(lista_jugadores,torneo,ronda,url):
         lista_jugadores_eliminados.append(jugador_eliminado)
 
         if(torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)].get("procesado") == False):
+            #print(str(torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)])+"-----------------------------------------")
             torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)][local] = torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)]["local"]
             del torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)]["local"]
 
@@ -38,9 +34,9 @@ def eliminatorias(lista_jugadores,torneo,ronda,url):
 
             torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)][visitante] = torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)]["visitante"]
             del torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)]["visitante"]
-            
+
             torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)][visitante]=(lista_jugadores.get(visitante,None))
-            
+
             if(jugador_eliminado==local):
                 print(visitante+" ha asesinado a "+local+" usando "+lista_jugadores.get(visitante,None))
                 ganador=visitante
@@ -60,21 +56,30 @@ def eliminatorias(lista_jugadores,torneo,ronda,url):
                 json.dump(torneo, f)
 
             lucha = lucha + 1
-            #time.sleep(2)
+            #time.sleep(3)
 
     print("Los jugadores "+str(lista_jugadores_eliminados)+" han sido eliminados. Mala suerte. Comienza la siguiente ronda.")
     #eliminar de la lista_jugadores a los jugadores lista_jugadores_eliminados
     for i in lista_jugadores_eliminados:
         lista_jugadores.pop(i)
 
-    print("Los jugadores "+str(list(lista_jugadores))+" pasan a la siguiente ronda. Enhorabuena.")
+    if(len(lista_jugadores)==1):
+        print("FINAL-------------------------------------------------------------------------------------------")
+        print("El ganador es "+str(list(lista_jugadores)))
+        return ""
+    else:
+        print("Los jugadores "+str(list(lista_jugadores))+" pasan a la siguiente ronda. Enhorabuena.")
 
     ronda=ronda+1
-    return(eliminatorias(lista_jugadores,torneo,ronda,url))
+    #return(eliminatorias(lista_jugadores,torneo,ronda,url))
+
+
+    return torneo,lista_jugadores
 
 #cargo esqueleto/modelo de torneo con jugadores ya metidos en el json
 url= "test.json"
 torneo = crearEsqueleto(url)
+#torneo = cargarJson(url)
 
 #extraigo la lista de jugadores
 lista_jugadores = torneo["jugadores"]
@@ -82,9 +87,12 @@ lista_jugadores = torneo["jugadores"]
 #shuffle lista_jugadores
 lista_jugadores = shuffleDict(lista_jugadores)
 
-#rondas = len(torneo["BattleRoyale"])
-#print(rondas)
-
-ronda=1
-#lanzo el proceso recursivo de eliminatoria
-eliminatorias(lista_jugadores,torneo,ronda,url)
+numero_de_jugadores = len(lista_jugadores)
+#print(numero_de_jugadores)
+i=numero_de_jugadores
+ronda=0
+while i>1:
+    ronda=ronda+1
+    eliminatorias(lista_jugadores,torneo,ronda,url)
+    #print(ronda)
+    i=int(i/2)

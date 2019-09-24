@@ -22,5 +22,7 @@ def crearEsqueleto(url):
         with open(url, "w") as f:
             json.dump(data, f)
         i=int(i/2)
-          
+
     return data
+
+#crearEsqueleto("torneo.json")
