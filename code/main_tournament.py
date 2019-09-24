@@ -1,33 +1,27 @@
 from randomdict import shuffleDict
 from random import choice
+from esqueleto_torneo import crearEsqueleto
 import time
 import json
-# create list of players
-lista_jugadores = {
-    "lusesitas":"quesadilla",
-    "guille":"alpargata",
-    "josete":"mochillo",
-    "broncano":"navaja",
-    "elias":"cebolla",
-    "juanito":"chiste",
-    "paco":"pelota",
-    "pablo":"aburrimiento"}
-
-torneo = {"BattleRoyale":{}}
 
 def eliminatorias(lista_jugadores,torneo,ronda):
+
+    #lista donde guardaré los jugadores que se van a eliminar
     lista_jugadores_eliminados = []
+
     if(len(lista_jugadores)==1):
+        print("FINAL-------------------------------------------------------------------------------------------")
         print("El ganador es "+str(list(lista_jugadores)))
         return ""
+
+    print("RONDA_"+str(ronda)+"---------------------------------------------------------------------------------")
+    #extraigo las rondas totales
+    rondas_totales = len(torneo["BattleRoyale"])
 
     if(len(lista_jugadores)==2):
         print("Llega la gran final!")
 
-
-    torneo["BattleRoyale"]["ronda"+str(ronda)]= {}
-    lucha=0
-
+    lucha=1
     for i in range(0,int((len(lista_jugadores))),2):
         local = list(lista_jugadores)[i]
         visitante = list(lista_jugadores)[i+1]
@@ -36,25 +30,37 @@ def eliminatorias(lista_jugadores,torneo,ronda):
         jugador_eliminado = choice([local,visitante])
         lista_jugadores_eliminados.append(jugador_eliminado)
 
-        torneo["BattleRoyale"]["ronda"+str(ronda)]["lucha"+str(lucha)]={local:lista_jugadores.get(local,None),visitante:lista_jugadores.get(visitante,None)}
-        with open("file.json", "w") as f:
-            #f.write(json.dumps(torneo).encode("utf-8"))
-            json.dump(torneo, f)
+        if(torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)].get("procesado") == False):
+            torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)][local] = torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)]["local"]
+            del torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)]["local"]
 
-        if(jugador_eliminado==local):
-            print(visitante+" ha asesinado a "+local+" usando "+lista_jugadores.get(visitante,None))
-            torneo["BattleRoyale"]["ronda"+str(ronda)]["lucha"+str(lucha)]={local:lista_jugadores.get(local,None),visitante:lista_jugadores.get(visitante,None),"gana":visitante,"process":True}
-            #generarJSON
-            #capturar imagen de website
-            #escribir tuit
-        else:
-            print(local+" ha asesinado a "+visitante+" usando "+lista_jugadores.get(local,None))
-            torneo["BattleRoyale"]["ronda"+str(ronda)]["lucha"+str(lucha)]={local:lista_jugadores.get(local,None),visitante:lista_jugadores.get(visitante,None),"gana":local, "process":True}
-            #generarJSON
-            #capturar imagen de website
-            #escribir tuit
-        lucha = lucha + 1
-        #time.sleep(2)
+            torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)][local]= (lista_jugadores.get(local,None))
+
+            torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)][visitante] = torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)]["visitante"]
+            del torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)]["visitante"]
+            
+            torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)][visitante]=(lista_jugadores.get(visitante,None))
+            
+            if(jugador_eliminado==local):
+                print(visitante+" ha asesinado a "+local+" usando "+lista_jugadores.get(visitante,None))
+                ganador=visitante
+                #generarJSON
+                #capturar imagen de website
+                #escribir tuit
+            else:
+                print(local+" ha asesinado a "+visitante+" usando "+lista_jugadores.get(local,None))
+                ganador=local
+                #generarJSON
+                #capturar imagen de website
+                #escribir tuit
+            torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)]["ganador"] = ganador
+            torneo["BattleRoyale"]["ronda_"+str(ronda)]["combate_"+str(lucha)]["procesado"] = True
+            with open("file.json", "w") as f:
+                #f.write(json.dumps(torneo).encode("utf-8"))
+                json.dump(torneo, f)
+
+            lucha = lucha + 1
+            #time.sleep(2)
 
     print("Los jugadores "+str(lista_jugadores_eliminados)+" han sido eliminados. Mala suerte. Comienza la siguiente ronda.")
     #eliminar de la lista_jugadores a los jugadores lista_jugadores_eliminados
@@ -66,16 +72,21 @@ def eliminatorias(lista_jugadores,torneo,ronda):
     ronda=ronda+1
     return(eliminatorias(lista_jugadores,torneo,ronda))
 
+#cargo esqueleto/modelo de torneo con jugadores ya metidos en el json
+torneo = crearEsqueleto("file.json")
+
+#extraigo la lista de jugadores
+lista_jugadores = torneo["jugadores"]
 
 #shuffle lista_jugadores
 lista_jugadores = shuffleDict(lista_jugadores)
 
-print(list(lista_jugadores))
+#rondas = len(torneo["BattleRoyale"])
+#print(rondas)
 
-ronda = 0
-
+ronda=1
+#lanzo el proceso recursivo de eliminatoria
 eliminatorias(lista_jugadores,torneo,ronda)
 
-#print(choice(list(lista_jugadores.keys())))
-
-#print(lista_jugadores)
+'''if(torneo["BattleRoyale"]["ronda_1"]["combate_1"].get("procesado") == False):
+    print(type(torneo["BattleRoyale"]["ronda_1"]["combate_1"].get("procesado")))'''
