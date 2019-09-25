@@ -30,7 +30,13 @@ def main():
 
     t = cargarTorneo(json)
 
-    t.printTournament()
+    numero_rondas_actuales = t.getNumeroRondasActual()
+    rondas_actuales = t.getRondas()
+    numero_jugadores = t.getNumeroJugadores()
+    jugadores = t.getJugadores()
+
+    print(t.getNumeroCombatesRondaActual())
+    #t.printTournament()
     #t.saveTournament()
 
 if __name__== "__main__":

@@ -25,3 +25,27 @@ class Tournament():
     def saveTournament(self):
         torneo = self.printTournament()
         guardarJson(torneo)
+
+    def getNumeroRondasActual(self):
+        return len(self.rondas)
+
+    def getNumeroJugadores(self):
+        return len(self.jugadores)
+
+    def getJugadores(self):
+        return self.jugadores
+
+    #calculo el numero de rondas totales que habra dependiendo de los jugadores
+    def getNumeroDeRondasTotales(self,numero_jugadores):
+        rondas=0
+        i=numero_jugadores
+        while i>1:
+            rondas=rondas+1
+            i=int(i/2)
+        return rondas
+
+    def getNumeroCombatesRondaActual(self):
+        l=[]
+        for i in self.rondas:
+            l.append(i.getCombates())
+        return l
