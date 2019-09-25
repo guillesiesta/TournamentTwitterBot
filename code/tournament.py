@@ -25,3 +25,8 @@ class Tournament():
     def saveTournament(self):
         torneo = self.printTournament()
         guardarJson(torneo)
+
+    def cargarRondas(self,lista_rondas):
+        for i in lista_rondas:
+            #self.rondas.append(i.printRonda())
+            print(i)

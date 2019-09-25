@@ -4,32 +4,34 @@ from combate import Combate
 from ronda import Ronda
 from json_operations import cargarJson
 
-
-def main():
-    json = cargarJson("dans_test.json")
+def cargarTorneo(json):
     nombre=json["torneo"]
     lista_jugadores = json["jugadores"]
 
     #creo objeto torneo
     t = Tournament(nombre,lista_jugadores)
 
-    r = Ronda("1")
-    c = Combate()
-    r.addCombate(c)
+    #compruebo en el json si hay rondas y dentro de ellas si hay combates
+    #voy creando los objetos y los voy almacenando en el objeto torneo
+    if len(json["rondas"]) != 0:
+        for i in json["rondas"]:
+            r = Ronda(i.get("ronda"))
+            if(len(i.get("combates"))):
+                combates = i.get("combates")
+                for i in combates:
+                    c = Combate(i.get("local"),i.get("visitante"),i.get("fecha"),i.get("ganador"))
+                    r.addCombate(c)
+            t.addRonda(r)
+    #devuelvo el torneo
+    return t
 
+def main():
+    json = cargarJson("torneo.json")
 
-
-    r2 = Ronda("2")
-    c1 = Combate()
-    c1.setGanador("pollita gay")
-    r2.addCombate(c1)
-    r2.addCombate(c1)
-
-    t.addRonda(r)
-    t.addRonda(r2)
+    t = cargarTorneo(json)
 
     t.printTournament()
-    t.saveTournament()
+    #t.saveTournament()
 
 if __name__== "__main__":
   main()

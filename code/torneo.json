@@ -1,1 +1,91 @@
-{"torneo": "Hacker Battle Royale", "rondas": [{"ronda": "1", "combates": [{"local": "local", "visitante": "visitante", "fecha": "fecha", "ganador": "ganador"}]}, {"ronda": "2", "combates": [{"local": "local", "visitante": "visitante", "fecha": "fecha", "ganador": "pollita gay"}, {"local": "local", "visitante": "visitante", "fecha": "fecha", "ganador": "pollita gay"}]}], "jugadores": [{"alias": "lusesitas", "arma": "quesadilla"}, {"alias": "juanito", "arma": "chiste"}, {"alias": "elias", "arma": "cebolla"}, {"alias": "josete", "arma": "mochillo"}, {"alias": "broncano", "arma": "navaja"}, {"alias": "guille", "arma": "alpargata"}, {"alias": "paco", "arma": "pelota"}, {"alias": "pablo", "arma": "aburrimiento"}]}
+{
+  "torneo": "Hacker Battle Royale",
+  "rondas": [
+    {
+      "ronda": "1",
+      "combates": [
+        {
+          "local": "jei jei",
+          "visitante": "scrandar",
+          "fecha": "fecha",
+          "ganador": "ganador"
+        },
+        {
+          "local": "rosalia",
+          "visitante": "pedales",
+          "fecha": "fecha",
+          "ganador": "pollita gay"
+        },
+        {
+          "local": "rosalia",
+          "visitante": "pedales",
+          "fecha": "fecha",
+          "ganador": "pollita gay"
+        },
+        {
+          "local": "rosalia",
+          "visitante": "pedales",
+          "fecha": "fecha",
+          "ganador": "pollita gay"
+        }
+      ]
+    },
+    {
+      "ronda": "2",
+      "combates": [
+        {
+          "local": "kiki",
+          "visitante": "visitante",
+          "fecha": "fecha",
+          "ganador": "pollita gay"
+        },
+        {
+          "local": "rosalia",
+          "visitante": "pedales",
+          "fecha": "fecha",
+          "ganador": "pollita gay"
+        },
+        {
+          "local": "rosalia",
+          "visitante": "pedales",
+          "fecha": "fecha",
+          "ganador": "pollita gay"
+        }
+      ]
+    }
+  ],
+  "jugadores": [
+    {
+      "alias": "lusesitas",
+      "arma": "quesadilla"
+    },
+    {
+      "alias": "juanito",
+      "arma": "chiste"
+    },
+    {
+      "alias": "elias",
+      "arma": "cebolla"
+    },
+    {
+      "alias": "josete",
+      "arma": "mochillo"
+    },
+    {
+      "alias": "broncano",
+      "arma": "navaja"
+    },
+    {
+      "alias": "guille",
+      "arma": "alpargata"
+    },
+    {
+      "alias": "paco",
+      "arma": "pelota"
+    },
+    {
+      "alias": "pablo",
+      "arma": "aburrimiento"
+    }
+  ]
+}
