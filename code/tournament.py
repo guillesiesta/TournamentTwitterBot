@@ -1,5 +1,6 @@
 import json
 from ronda import Ronda
+from json_operations import guardarJson
 
 class Tournament():
     def __init__(self,torneo,jugadores):
@@ -23,5 +24,4 @@ class Tournament():
 
     def saveTournament(self):
         torneo = self.printTournament()
-        with open("torneo.json", "w") as f:
-            json.dump(torneo, f)
+        guardarJson(torneo)
