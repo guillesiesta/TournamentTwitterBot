@@ -1,23 +1,27 @@
 import json
-from rondas import Rondas
+from ronda import Ronda
 
 class Tournament():
     def __init__(self,torneo,jugadores):
         self.torneo=torneo
-        self.rondas=Rondas()
+        self.rondas=[] #lista de rondas
         self.jugadores=jugadores
 
     def printTournament(self):
-        torneo={"torneo":self.torneo,"rondas":self.rondas.printRondas(),"jugadores":self.jugadores}
+        torneo={"torneo":self.torneo,"rondas":self.getRondas(),"jugadores":self.jugadores}
         print(torneo)
         #print(json.dumps(torneo))
         #with open('abc.json', 'w') as outfile:
             #json.dump(data, outfile, indent=4)
 
-    def addRonda(self,indice,c):
+    def addRonda(self,lista):
         #self.rondas={"ronda":str(indice),"combates":combate}
-        self.rondas.addRonda(indice)
-        self.rondas.addCombate(c)
+        #self.rondas.addRonda(indice)
+        self.rondas.append(lista)
+        #self.rondas.addCombate(c)
 
-    '''def addCombate(self,local,visitante,fecha,ganador):
-        self.rondas.addCombate(local,visitante,fecha,ganador)'''
+    def getRondas(self):
+        lista_rondas=[]
+        for i in self.rondas:
+            lista_rondas.append(i.printRonda())
+        return lista_rondas
