@@ -2,12 +2,7 @@ import json
 from tournament import Tournament
 from combate import Combate
 from ronda import Ronda
-
-def cargarJson(url):
-    with open(url, 'r') as f:
-        array = json.load(f)
-
-    return array
+from json_operations import cargarJson
 
 
 def main():
@@ -15,23 +10,26 @@ def main():
     nombre=json["torneo"]
     lista_jugadores = json["jugadores"]
 
+    #creo objeto torneo
     t = Tournament(nombre,lista_jugadores)
-    #c = Combates("broncano","visitante","fecha","visitante")
 
     r = Ronda("1")
     c = Combate()
-    c1 = Combate()
+    r.addCombate(c)
+
+
 
     r2 = Ronda("2")
-
-    r.addCombate(c)
+    c1 = Combate()
+    c1.setGanador("pollita gay")
+    r2.addCombate(c1)
     r2.addCombate(c1)
 
     t.addRonda(r)
     t.addRonda(r2)
 
     t.printTournament()
-
+    t.saveTournament()
 
 if __name__== "__main__":
   main()

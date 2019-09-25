@@ -9,19 +9,19 @@ class Tournament():
 
     def printTournament(self):
         torneo={"torneo":self.torneo,"rondas":self.getRondas(),"jugadores":self.jugadores}
-        print(torneo)
-        #print(json.dumps(torneo))
-        #with open('abc.json', 'w') as outfile:
-            #json.dump(data, outfile, indent=4)
+        print(json.dumps(torneo))
+        return(torneo)
 
     def addRonda(self,lista):
-        #self.rondas={"ronda":str(indice),"combates":combate}
-        #self.rondas.addRonda(indice)
         self.rondas.append(lista)
-        #self.rondas.addCombate(c)
 
     def getRondas(self):
         lista_rondas=[]
         for i in self.rondas:
             lista_rondas.append(i.printRonda())
         return lista_rondas
+
+    def saveTournament(self):
+        torneo = self.printTournament()
+        with open("torneo.json", "w") as f:
+            json.dump(torneo, f)
