@@ -5,24 +5,28 @@
       "ronda": "1",
       "combates": [
         {
+          "combate":"1",
           "local": "jei jei",
           "visitante": "scrandar",
           "fecha": "fecha",
           "ganador": "ganador"
         },
         {
+          "combate":"2",
           "local": "rosalia",
           "visitante": "pedales",
           "fecha": "fecha",
           "ganador": "pollita gay"
         },
         {
+          "combate":"3",
           "local": "rosalia",
           "visitante": "pedales",
           "fecha": "fecha",
           "ganador": "pollita gay"
         },
         {
+          "combate":"4",
           "local": "rosalia",
           "visitante": "pedales",
           "fecha": "fecha",
@@ -34,12 +38,14 @@
       "ronda": "2",
       "combates": [
         {
+          "combate":"1",
           "local": "kiki",
           "visitante": "visitante",
           "fecha": "fecha",
           "ganador": "pollita gay"
         },
         {
+          "combate":"2",
           "local": "rosalia",
           "visitante": "pedales",
           "fecha": "fecha",
@@ -51,35 +57,43 @@
   "jugadores": [
     {
       "alias": "lusesitas",
-      "arma": "quesadilla"
+      "arma": "quesadilla",
+      "muerto":"no"
     },
     {
       "alias": "juanito",
-      "arma": "chiste"
+      "arma": "chiste",
+      "muerto":"no"
     },
     {
       "alias": "elias",
-      "arma": "cebolla"
+      "arma": "cebolla",
+      "muerto":"no"
     },
     {
       "alias": "josete",
-      "arma": "mochillo"
+      "arma": "mochillo",
+      "muerto":"no"
     },
     {
       "alias": "broncano",
-      "arma": "navaja"
+      "arma": "navaja",
+      "muerto":"no"
     },
     {
       "alias": "guille",
-      "arma": "alpargata"
+      "arma": "alpargata",
+      "muerto":"no"
     },
     {
       "alias": "paco",
-      "arma": "pelota"
+      "arma": "pelota",
+      "muerto":"no"
     },
     {
       "alias": "pablo",
-      "arma": "aburrimiento"
+      "arma": "aburrimiento",
+      "muerto":"no"
     }
   ]
 }

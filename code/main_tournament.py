@@ -19,7 +19,7 @@ def cargarTorneo(json):
             if(len(i.get("combates"))):
                 combates = i.get("combates")
                 for i in combates:
-                    c = Combate(i.get("local"),i.get("visitante"),i.get("fecha"),i.get("ganador"))
+                    c = Combate(i.get("combate"),i.get("local"),i.get("visitante"),i.get("fecha"),i.get("ganador"))
                     r.addCombate(c)
             t.addRonda(r)
     #devuelvo el torneo
@@ -35,8 +35,8 @@ def main():
     numero_jugadores = t.getNumeroJugadores()
     jugadores = t.getJugadores()
 
-    print(t.getNumeroCombatesRondaActual())
-    #t.printTournament()
+    #print(t.getNumeroCombatesRondaActual())
+    t.printTournament()
     #t.saveTournament()
 
 if __name__== "__main__":
