@@ -7,9 +7,9 @@ from json_operations import cargarJson
 def cargarTorneo(json):
     nombre=json["torneo"]
     lista_jugadores = json["jugadores"]
-
+    numero_participantes = len(lista_jugadores)
     #creo objeto torneo
-    t = Tournament(nombre,lista_jugadores)
+    t = Tournament(nombre,numero_participantes,lista_jugadores)
 
     #compruebo en el json si hay rondas y dentro de ellas si hay combates
     #voy creando los objetos y los voy almacenando en el objeto torneo

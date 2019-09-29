@@ -3,13 +3,14 @@ from ronda import Ronda
 from json_operations import guardarJson
 
 class Tournament():
-    def __init__(self,torneo,jugadores):
+    def __init__(self,torneo,participantes,jugadores):
         self.torneo=torneo
+        self.participantes=participantes
         self.rondas=[] #lista de rondas
         self.jugadores=jugadores
 
     def printTournament(self):
-        torneo={"torneo":self.torneo,"rondas":self.getRondas(),"jugadores":self.jugadores}
+        torneo={"torneo":self.torneo,"participantes":self.participantes,"rondas":self.getRondas(),"jugadores":self.jugadores}
         print(json.dumps(torneo))
         return(torneo)
 

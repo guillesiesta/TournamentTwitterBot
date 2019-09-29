@@ -94,6 +94,46 @@
       "alias": "pablo",
       "arma": "aburrimiento",
       "muerto":"no"
+    },
+    {
+      "alias": "lusesitas",
+      "arma": "quesadilla",
+      "muerto":"no"
+    },
+    {
+      "alias": "juanito",
+      "arma": "chiste",
+      "muerto":"no"
+    },
+    {
+      "alias": "elias",
+      "arma": "cebolla",
+      "muerto":"no"
+    },
+    {
+      "alias": "josete",
+      "arma": "mochillo",
+      "muerto":"no"
+    },
+    {
+      "alias": "broncano",
+      "arma": "navaja",
+      "muerto":"no"
+    },
+    {
+      "alias": "guille",
+      "arma": "alpargata",
+      "muerto":"no"
+    },
+    {
+      "alias": "paco",
+      "arma": "pelota",
+      "muerto":"no"
+    },
+    {
+      "alias": "pablo",
+      "arma": "aburrimiento",
+      "muerto":"no"
     }
   ]
 }
