@@ -18,3 +18,6 @@ class Ronda():
         for i in self.combates:
             lista_combates.append(i.printCombate())
         return lista_combates
+
+    def getNumeroRonda(self):
+        return self.ronda

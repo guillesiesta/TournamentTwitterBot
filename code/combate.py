@@ -23,6 +23,9 @@ class Combate():
 
     def setFecha(self,fecha):
         self.fecha = fecha
-    
+
     def setCombate(self,combate):
         self.combate = combate
+
+    def getNumeroCombate(self):
+        return self.combate

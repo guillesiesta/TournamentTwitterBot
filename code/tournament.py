@@ -67,11 +67,15 @@ class Tournament():
             ganador=""
             c = Combate(i+1,local,visitante,fecha,ganador)
             ronda1.addCombate(c)
-            #print("local "+local+" visitante "+ visitante)
             j=j+2
 
         self.addRonda(ronda1)
         return True
 
-    def jugar(self):
+    def combatir(self):
+        #primero buscar si hay algun ganador
+        '''for i in self.rondas:
+            #print(i.getNumeroRonda())
+            for j in i.combates:
+                #print(j.getNumeroCombate())'''
         return True
