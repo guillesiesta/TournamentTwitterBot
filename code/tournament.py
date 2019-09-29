@@ -66,7 +66,8 @@ class Tournament():
             visitante = list(lista_jugadores)[j+1].get("alias")
             fecha = "X"
             ganador=""
-            c = Combate(i+1,local,visitante,fecha,ganador)
+            texto=""
+            c = Combate(i+1,local,visitante,fecha,ganador,texto)
             ronda1.addCombate(c)
             j=j+2
 
@@ -83,8 +84,10 @@ class Tournament():
                 visitante = j.getVisitante()
                 jugador_ganador = choice([local,visitante])
                 j.setGanador(jugador_ganador)
-                ganadores.append(jugador_ganador)
                 texto_tuit = self.escribirTextoTuit(local,visitante,jugador_ganador)
+                j.setTexto(texto_tuit)
+                ganadores.append(jugador_ganador)
+
                 print(texto_tuit)
 
         if(len(ganadores)==1):
@@ -120,6 +123,6 @@ class Tournament():
         if(jugador_ganador==local):
             texto_tuit = "local "+local+ " mata a visitante "+ visitante+" con algo"
         elif(jugador_ganador==visitante):
-            texto_tuit = "visitante "+visitante+ " mata a local "+ visitante+" con algo"
+            texto_tuit = "visitante "+visitante+ " mata a local "+ local+" con algo"
 
         return texto_tuit

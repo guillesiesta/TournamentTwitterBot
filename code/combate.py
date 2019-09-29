@@ -1,15 +1,16 @@
 import json
 
 class Combate():
-    def __init__(self, combate="combate",local="local", visitante="visitante", fecha="fecha", ganador="ganador"):
+    def __init__(self, combate="combate",local="local", visitante="visitante", fecha="fecha", ganador="ganador",texto="texto"):
         self.local=local
         self.visitante=visitante
         self.fecha=fecha
         self.ganador=ganador
         self.combate=combate
+        self.texto=texto
 
     def printCombate(self):
-        c = {"combate":self.combate,"local":self.local,"visitante":self.visitante,"fecha":self.fecha,"ganador":self.ganador}
+        c = {"combate":self.combate,"local":self.local,"visitante":self.visitante,"fecha":self.fecha,"ganador":self.ganador,"texto":self.texto}
         return c
 
     def setGanador(self, ganador):
@@ -27,6 +28,9 @@ class Combate():
     def setCombate(self,combate):
         self.combate = combate
 
+    def setTexto(self,texto):
+        self.texto = texto
+
     def getNumeroCombate(self):
         return self.combate
 
@@ -41,3 +45,6 @@ class Combate():
 
     def getFecha(self):
         return self.fecha
+
+    def getTexto(self):
+        return self.texto

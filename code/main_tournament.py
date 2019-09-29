@@ -19,7 +19,7 @@ def cargarTorneo(json):
             if(len(i.get("combates"))):
                 combates = i.get("combates")
                 for i in combates:
-                    c = Combate(i.get("combate"),i.get("local"),i.get("visitante"),i.get("fecha"),i.get("ganador"))
+                    c = Combate(i.get("combate"),i.get("local"),i.get("visitante"),i.get("fecha"),i.get("ganador"),i.get("texto"))
                     r.addCombate(c)
             t.addRonda(r)
     else:

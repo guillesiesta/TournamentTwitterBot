@@ -10,56 +10,64 @@
           "local": "guille22",
           "visitante": "juanito",
           "fecha": "X",
-          "ganador": ""
+          "ganador": "",
+          "texto":""
         },
         {
           "combate": 2,
           "local": "paco",
           "visitante": "josete",
           "fecha": "X",
-          "ganador": ""
+          "ganador": "",
+          "texto":""
         },
         {
           "combate": 3,
           "local": "pablo22",
           "visitante": "lusesitas",
           "fecha": "X",
-          "ganador": ""
+          "ganador": "",
+          "texto":""
         },
         {
           "combate": 4,
           "local": "guille",
           "visitante": "broncano",
           "fecha": "X",
-          "ganador": ""
+          "ganador": "",
+          "texto":""
         },
         {
           "combate": 5,
           "local": "elias22",
           "visitante": "broncano22",
           "fecha": "X",
-          "ganador": ""
+          "ganador": "",
+          "texto":""
         },
         {
           "combate": 6,
           "local": "paco22",
           "visitante": "lusesitas22",
           "fecha": "X",
-          "ganador": ""
+          "ganador": "",
+          "texto":""
         },
         {
           "combate": 7,
           "local": "juanito22",
           "visitante": "elias",
           "fecha": "X",
-          "ganador": ""
+          "ganador": "",
+          "texto":""
         },
         {
           "combate": 8,
           "local": "josete22",
           "visitante": "pablo",
           "fecha": "X",
-          "ganador": ""
+          "ganador": "",
+          "texto":""
         }
       ]
     }
