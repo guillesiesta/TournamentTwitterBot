@@ -40,9 +40,9 @@ class Tournament():
         return self.jugadores
 
     #calculo el numero de rondas totales que habra dependiendo de los jugadores
-    def getNumeroDeRondasTotales(self,numero_jugadores):
+    def getNumeroDeRondasTotales(self):
         rondas=0
-        i=numero_jugadores
+        i=self.participantes
         while i>1:
             rondas=rondas+1
             i=int(i/2)
@@ -77,20 +77,23 @@ class Tournament():
         return True
 
     def combatir(self):
+        participanes_por_ronda = self.participantes
         #print(self.getNumeroDeRondasTotales(self.participantes))
         #while(self.getNumeroDeRondasTotales(self.participantes) != self.getNumeroRondasActual()):
-        for i in self.rondas:
-            #print(i.getNumeroRonda())
-            for j in i.combates:
-                if(j.getGanador()==""):
-                    local = j.getLocal()
-                    visitante = j.getVisitante()
-                    jugador_ganador = choice([local,visitante])
-                    j.setGanador(jugador_ganador)
-                    texto_tuit = self.escribirTextoTuit(local,visitante,jugador_ganador)
-                    print(texto_tuit)
-            if(i.getNumeroRonda() == self.getNumeroDeRondasTotales(self.participantes)):
+        if(self.getNumeroRondasActual()!=self.getNumeroDeRondasTotales()):
+            print("faltan rondas")
 
+        '''for i in self.rondas:
+            #print(i.getNumeroRonda())
+            if(i.getNumeroCombates()==int(participanes_por_ronda/2)):
+                for j in i.combates:
+                    if(j.getGanador()==""):
+                        local = j.getLocal()
+                        visitante = j.getVisitante()
+                        jugador_ganador = choice([local,visitante])
+                        j.setGanador(jugador_ganador)
+                        texto_tuit = self.escribirTextoTuit(local,visitante,jugador_ganador)
+                        print(texto_tuit)'''
         return True
 
     def escribirTextoTuit(self,local,visitante,jugador_ganador):

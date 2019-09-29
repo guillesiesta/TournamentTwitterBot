@@ -20,4 +20,7 @@ class Ronda():
         return lista_combates
 
     def getNumeroRonda(self):
-        return self.ronda
+        return self.rondan
+
+    def getNumeroCombates(self):
+        return len(self.combates)
