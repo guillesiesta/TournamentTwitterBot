@@ -3,6 +3,7 @@ from ronda import Ronda
 from combate import Combate
 from json_operations import guardarJson
 import random
+from random import choice
 
 class Tournament():
     def __init__(self,torneo,participantes,jugadores):
@@ -72,10 +73,35 @@ class Tournament():
         self.addRonda(ronda1)
         return True
 
+    def crearEsqueletoTorneo(self):
+        return True
+
     def combatir(self):
-        #primero buscar si hay algun ganador
-        '''for i in self.rondas:
+        #print(self.getNumeroDeRondasTotales(self.participantes))
+        #while(self.getNumeroDeRondasTotales(self.participantes) != self.getNumeroRondasActual()):
+        for i in self.rondas:
             #print(i.getNumeroRonda())
             for j in i.combates:
-                #print(j.getNumeroCombate())'''
+                if(j.getGanador()==""):
+                    local = j.getLocal()
+                    visitante = j.getVisitante()
+                    jugador_ganador = choice([local,visitante])
+                    j.setGanador(jugador_ganador)
+                    texto_tuit = self.escribirTextoTuit(local,visitante,jugador_ganador)
+                    print(texto_tuit)
+            if(i.getNumeroRonda() == self.getNumeroDeRondasTotales(self.participantes)):
+
         return True
+
+    def escribirTextoTuit(self,local,visitante,jugador_ganador):
+        local = local
+        visitante = visitante
+        jugador_ganador = jugador_ganador
+
+        #genero la frase del tuit
+        if(jugador_ganador==local):
+            texto_tuit = "local "+local+ " mata a visitante "+ visitante+" con algo"
+        elif(jugador_ganador==visitante):
+            texto_tuit = "visitante "+visitante+ " mata a local "+ visitante+" con algo"
+
+        return texto_tuit
