@@ -19,8 +19,20 @@ class Ronda():
             lista_combates.append(i.printCombate())
         return lista_combates
 
+    def getObjectCombates(self):
+        lista_combates = []
+        for i in self.combates:
+            lista_combates.append(i)
+        return lista_combates
+
     def getNumeroRonda(self):
-        return self.rondan
+        return self.ronda
 
     def getNumeroCombates(self):
         return len(self.combates)
+
+    def RondaAcabada(self):
+        for i in self.combates:
+            if(i.getGanador()==""):
+                return False
+        return True
