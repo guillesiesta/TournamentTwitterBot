@@ -7,5 +7,5 @@ def cargarJson(url):
     return array
 
 def guardarJson(contenido):
-    with open("torneo.json", "w") as f:
+    with open("dans_test.json", "w") as f:
         json.dump(contenido, f)

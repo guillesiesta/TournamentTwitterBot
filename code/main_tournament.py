@@ -22,18 +22,20 @@ def cargarTorneo(json):
                     c = Combate(i.get("combate"),i.get("local"),i.get("visitante"),i.get("fecha"),i.get("ganador"))
                     r.addCombate(c)
             t.addRonda(r)
+    else:
+        t.iniciarTorneo() #crear primera ronda
     #devuelvo el torneo
     return t
 
 def main():
-    json = cargarJson("torneo.json")
+    json = cargarJson("dans_test.json")
 
     t = cargarTorneo(json)
 
-    numero_rondas_actuales = t.getNumeroRondasActual()
+    '''numero_rondas_actuales = t.getNumeroRondasActual()
     rondas_actuales = t.getRondas()
     numero_jugadores = t.getNumeroJugadores()
-    jugadores = t.getJugadores()
+    jugadores = t.getJugadores()'''
 
     #print(t.getNumeroCombatesRondaActual())
     t.printTournament()

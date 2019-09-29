@@ -1,6 +1,8 @@
 import json
 from ronda import Ronda
+from combate import Combate
 from json_operations import guardarJson
+import random
 
 class Tournament():
     def __init__(self,torneo,participantes,jugadores):
@@ -50,3 +52,27 @@ class Tournament():
         for i in self.rondas:
             l.append(i.getCombates())
         return l
+
+    def iniciarTorneo(self):
+        #si el torneo esta vacio, relleno la primera ronda
+        combates_primera_ronda = int(self.participantes/2)
+        random.shuffle(self.jugadores)
+        lista_jugadores = self.jugadores
+        ronda1 = Ronda("1")
+        j=0
+        for i in range(combates_primera_ronda):
+            #print("Combate"+str(i+1))
+            local = list(lista_jugadores)[j].get("alias")
+            visitante = list(lista_jugadores)[j+1].get("alias")
+            fecha = "X"
+            ganador=""
+            c = Combate(str(i+1),local,visitante,fecha,ganador)
+            ronda1.addCombate(c)
+            #print("local "+local+" visitante "+ visitante)
+            j=j+2
+
+        self.addRonda(ronda1)
+        return True
+
+    def jugar(self):
+        return True
