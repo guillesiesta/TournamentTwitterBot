@@ -58,15 +58,14 @@ class Tournament():
         combates_primera_ronda = int(self.participantes/2)
         random.shuffle(self.jugadores)
         lista_jugadores = self.jugadores
-        ronda1 = Ronda("1")
+        ronda1 = Ronda(1)
         j=0
         for i in range(combates_primera_ronda):
-            #print("Combate"+str(i+1))
             local = list(lista_jugadores)[j].get("alias")
             visitante = list(lista_jugadores)[j+1].get("alias")
             fecha = "X"
             ganador=""
-            c = Combate(str(i+1),local,visitante,fecha,ganador)
+            c = Combate(i+1,local,visitante,fecha,ganador)
             ronda1.addCombate(c)
             #print("local "+local+" visitante "+ visitante)
             j=j+2
