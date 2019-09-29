@@ -29,3 +29,15 @@ class Combate():
 
     def getNumeroCombate(self):
         return self.combate
+
+    def getLocal(self):
+        return self.local
+
+    def getVisitante(self):
+        return self.visitante
+
+    def getGanador(self):
+        return self.ganador
+
+    def getFecha(self):
+        return self.fecha
