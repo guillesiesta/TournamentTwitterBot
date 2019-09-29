@@ -38,7 +38,8 @@ def main():
     jugadores = t.getJugadores()'''
 
     #print(t.getNumeroCombatesRondaActual())
-    t.combatir()
+    #print(t.rondas[0])
+    t.combatir(t.rondas[0])
     t.printTournament()
     #t.saveTournament()
 

@@ -73,28 +73,43 @@ class Tournament():
         self.addRonda(ronda1)
         return True
 
-    def crearEsqueletoTorneo(self):
-        return True
+    def combatir(self,ronda):
+        ganadores = []
+        combates = ronda.getObjectCombates()
 
-    def combatir(self):
-        participanes_por_ronda = self.participantes
-        #print(self.getNumeroDeRondasTotales(self.participantes))
-        #while(self.getNumeroDeRondasTotales(self.participantes) != self.getNumeroRondasActual()):
-        if(self.getNumeroRondasActual()!=self.getNumeroDeRondasTotales()):
-            print("faltan rondas")
+        for j in combates:
+            if(j.getGanador()==""):
+                local = j.getLocal()
+                visitante = j.getVisitante()
+                jugador_ganador = choice([local,visitante])
+                j.setGanador(jugador_ganador)
+                ganadores.append(jugador_ganador)
+                texto_tuit = self.escribirTextoTuit(local,visitante,jugador_ganador)
+                print(texto_tuit)
 
-        '''for i in self.rondas:
-            #print(i.getNumeroRonda())
-            if(i.getNumeroCombates()==int(participanes_por_ronda/2)):
-                for j in i.combates:
-                    if(j.getGanador()==""):
-                        local = j.getLocal()
-                        visitante = j.getVisitante()
-                        jugador_ganador = choice([local,visitante])
-                        j.setGanador(jugador_ganador)
-                        texto_tuit = self.escribirTextoTuit(local,visitante,jugador_ganador)
-                        print(texto_tuit)'''
-        return True
+        if(len(ganadores)==1):
+            return True
+
+        ronda = self.generarRondaConGanadores(ganadores,ronda.getNumeroRonda()+1)
+
+        self.combatir(ronda)
+
+    def generarRondaConGanadores(self,ganadores,n_ronda):
+        lista_jugadores = ganadores
+        combates_por_ronda = int(len(ganadores)/2)
+        ronda = Ronda(n_ronda)
+        j=0
+        for i in range(combates_por_ronda):
+            local = list(lista_jugadores)[j]
+            visitante = list(lista_jugadores)[j+1]
+            fecha = "X"
+            ganador=""
+            c = Combate(i+1,local,visitante,fecha,ganador)
+            ronda.addCombate(c)
+            j=j+2
+        self.addRonda(ronda)
+        return ronda
+
 
     def escribirTextoTuit(self,local,visitante,jugador_ganador):
         local = local
