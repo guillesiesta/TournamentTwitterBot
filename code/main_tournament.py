@@ -28,7 +28,7 @@ def cargarTorneo(json):
     return t
 
 def main():
-    json = cargarJson("dans_test.json")
+    json = cargarJson("jsons/dans_test_1.json")
 
     t = cargarTorneo(json)
 
@@ -40,7 +40,7 @@ def main():
     #print(t.getNumeroCombatesRondaActual())
     #print(t.rondas[0])
     t.combatir(t.rondas[0])
-    t.printTournament()
+    #t.printTournament()
     #t.saveTournament()
 
 if __name__== "__main__":

@@ -87,7 +87,7 @@ class Tournament():
                 texto_tuit = self.escribirTextoTuit(local,visitante,jugador_ganador)
                 j.setTexto(texto_tuit)
                 ganadores.append(jugador_ganador)
-
+                self.saveTournament()
                 print(texto_tuit)
 
         if(len(ganadores)==1):
@@ -105,12 +105,13 @@ class Tournament():
         for i in range(combates_por_ronda):
             local = list(lista_jugadores)[j]
             visitante = list(lista_jugadores)[j+1]
-            fecha = "X"
+            fecha = ""
             ganador=""
             c = Combate(i+1,local,visitante,fecha,ganador)
             ronda.addCombate(c)
             j=j+2
         self.addRonda(ronda)
+        self.saveTournament()
         return ronda
 
 
