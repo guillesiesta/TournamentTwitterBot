@@ -1,7 +1,7 @@
 # TournamentTwitterBot
 Tournament twitter bot in python.
 
-## Librerias usadas
+## Librerias usadas :-)
 
 [imgkit](https://pypi.org/project/imgkit/)
 [tweepy](https://www.tweepy.org/)
