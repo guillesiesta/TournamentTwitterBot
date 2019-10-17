@@ -122,8 +122,16 @@ class Tournament():
 
         #genero la frase del tuit
         if(jugador_ganador==local):
-            texto_tuit = "local "+local+ " mata a visitante "+ visitante+" con algo"
+            texto_tuit = "local "+local+ " mata a visitante "+ visitante+" con "+self.findWeaponByName(local)
         elif(jugador_ganador==visitante):
-            texto_tuit = "visitante "+visitante+ " mata a local "+ local+" con algo"
+            texto_tuit = "visitante "+visitante+ " mata a local "+ local+" con "+self.findWeaponByName(visitante)
 
         return texto_tuit
+
+    def findWeaponByName(self,name):
+        weapon = ""
+        for x in list(self.getJugadores()):
+            if x.get("alias") == name:
+                weapon = x.get("arma")
+                break
+        return weapon

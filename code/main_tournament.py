@@ -39,6 +39,8 @@ def main():
 
     #print(t.getNumeroCombatesRondaActual())
     #print(t.rondas[0])
+    # aqui empieza el torneo
+    # es necesario pasarle la primera ronda
     t.combatir(t.rondas[0])
     #t.printTournament()
     #t.saveTournament()
