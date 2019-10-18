@@ -27,7 +27,7 @@ def cargarTorneo(json):
     #devuelvo el torneo
     return t
 
-def main():
+def start():
     json = cargarJson("jsons/dans_test_1.json")
 
     t = cargarTorneo(json)
@@ -45,5 +45,5 @@ def main():
     #t.printTournament()
     #t.saveTournament()
 
-if __name__== "__main__":
-  main()
+'''if __name__== "__main__":
+  main()'''
