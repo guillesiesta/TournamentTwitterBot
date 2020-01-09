@@ -28,7 +28,7 @@ def cargarTorneo(json):
     return t
 
 def start():
-    json = cargarJson("jsons/dans_test_1.json")
+    json = cargarJson("jsons/dans_test_0.json")
 
     t = cargarTorneo(json)
 
