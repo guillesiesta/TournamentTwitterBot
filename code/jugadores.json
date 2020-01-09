@@ -1,0 +1,168 @@
+{
+    "torneo": "Hacker Battle Royale",
+    "participantes": 16,
+    "rondas": [],
+    "jugadores": [
+      {
+        "alias": "BTShell",
+        "arma": "inyección letal",
+        "muerto": "no"
+      },
+      {
+        "alias": "cesarfarro",
+        "arma": "cable RJ45",
+        "muerto": "no"
+      },
+      {
+        "alias": "NN2ed_s4ur0n",
+        "arma": "PowerShell",
+        "muerto": "no"
+      },
+      {
+        "alias": "pepeluxx",
+        "arma": "Sinclair ZX81",
+        "muerto": "no"
+      },
+      {
+        "alias": "TaiksonTexas",
+        "arma": "Toys'R'Us",
+        "muerto": "no"
+      },
+      {
+        "alias": "PatoWC",
+        "arma": "escobilla WC",
+        "muerto": "no"
+      },
+      {
+        "alias": "OmarBV",
+        "arma": "llave 12=13 de IKEA",
+        "muerto": "no"
+      },
+      {
+        "alias": "kinomakino",
+        "arma": "loncha de jamón",
+        "muerto": "no"
+      },
+      {
+        "alias": "ctorranog",
+        "arma": "Skynet instalado en un 486",
+        "muerto": "no"
+      },
+      {
+        "alias": "cloureiro80",
+        "arma": "consola de comandos",
+        "muerto": "no"
+      },
+      {
+        "alias": "0fjrm0",
+        "arma": "café al que invita",
+        "muerto": "no"
+      },
+      {
+        "alias": "CiberPoliES",
+        "arma": "huevo",
+        "muerto": "no"
+      },
+      {
+        "alias": "pedaguitu",
+        "arma": "cerveza mortal",
+        "muerto": "no"
+      },
+      {
+        "alias": "seifreedcon",
+        "arma": "poder del teclado sin teclas",
+        "muerto": "no"
+      },
+      {
+        "alias": "VAguileraDiaz",
+        "arma": "bola de billar",
+        "muerto": "no"
+      },
+      {
+        "alias": "Santpapen",
+        "arma": "soldador",
+        "muerto": "no"
+      },
+      {
+        "alias": "lawwait",
+        "arma": "patinete",
+        "muerto": "no"
+      },
+      {
+        "alias": "CarloSeisdedos",
+        "arma": "script de OsInt",
+        "muerto": "no"
+      },
+      {
+        "alias": "sbarrera0",
+        "arma": "montada en unicornio",
+        "muerto": "no"
+      },
+      {
+        "alias": "JoelSernaMoreno",
+        "arma": "martillo",
+        "muerto": "no"
+      },
+      {
+        "alias": "JdlcPhilosophy",
+        "arma": "antena GSM",
+        "muerto": "no"
+      },
+      {
+        "alias": "Coke727",
+        "arma": "megáfono inteligente",
+        "muerto": "no"
+      },
+      {
+        "alias": "adaypr",
+        "arma": "plátano canario",
+        "muerto": "no"
+      },
+      {
+        "alias": "LauraLacarra",
+        "arma": "arco de los Juegos del Hambre",
+        "muerto": "no"
+      },
+      {
+        "alias": "psaneme",
+        "arma": "daga de Adyanti",
+        "muerto": "no"
+      },
+      {
+        "alias": "ClaudioChn",
+        "arma": "Mjolnir de Thor",
+        "muerto": "no"
+      },
+      {
+        "alias": "PilarinaVilla",
+        "arma": "varita de Hogwarts",
+        "muerto": "no"
+      },
+      {
+        "alias": "IPVision_ve",
+        "arma": "poder del OSINT",
+        "muerto": "no"
+      },
+      {
+        "alias": "miguelguerrape",
+        "arma": "HorusBox",
+        "muerto": "no"
+      },
+      {
+        "alias": "as_informatico",
+        "arma": "noise creicket de K (MiB)",
+        "muerto": "no"
+      },
+      {
+        "alias": "Kirzahk",
+        "arma": "caja escupe-dragones",
+        "muerto": "no"
+      },
+      {
+        "alias": "msnovoa",
+        "arma": "gaita",
+        "muerto": "no"
+      }
+    ]
+  }
+  
