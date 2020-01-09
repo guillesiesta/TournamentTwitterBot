@@ -64,7 +64,7 @@ class Tournament():
         for i in range(combates_primera_ronda):
             local = list(lista_jugadores)[j].get("alias")
             visitante = list(lista_jugadores)[j+1].get("alias")
-            fecha = "X"
+            fecha = ""
             ganador=""
             texto=""
             c = Combate(i+1,local,visitante,fecha,ganador,texto)
@@ -72,6 +72,7 @@ class Tournament():
             j=j+2
 
         self.addRonda(ronda1)
+        self.saveTournament()
         return True
 
     def combatir(self,ronda):
@@ -120,11 +121,13 @@ class Tournament():
         visitante = visitante
         jugador_ganador = jugador_ganador
 
+        #random para expresion para decir de distintas formas que uno mata a otro
+        expresion = choice([" se ha cepillado a ", " mata a ", " ha finalizado la vida de ", " le ha dado una paliza a ", " ha asesinado a ", " ha ejecutado a "])
         #genero la frase del tuit
         if(jugador_ganador==local):
-            texto_tuit = "local "+local+ " mata a visitante "+ visitante+" con "+self.findWeaponByName(local)
+            texto_tuit = local + expresion + visitante + " con su "+self.findWeaponByName(local)
         elif(jugador_ganador==visitante):
-            texto_tuit = "visitante "+visitante+ " mata a local "+ local+" con "+self.findWeaponByName(visitante)
+            texto_tuit = visitante + expresion + local + " con su "+self.findWeaponByName(visitante)
 
         return texto_tuit
 
