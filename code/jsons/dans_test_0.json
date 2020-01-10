@@ -1,6 +1,6 @@
 {
   "torneo": "Hacker Battle Royale",
-  "participantes": 32,
+  "participantes": 64,
   "rondas": [],
   "jugadores": [
     {
@@ -161,6 +161,166 @@
     {
       "alias": "msnovoa",
       "arma": "gaita",
+      "muerto": "no"
+    },
+    {
+      "alias": "BT",
+      "arma": "inyección",
+      "muerto": "no"
+    },
+    {
+      "alias": "ce",
+      "arma": "cable",
+      "muerto": "no"
+    },
+    {
+      "alias": "NN",
+      "arma": "Power",
+      "muerto": "no"
+    },
+    {
+      "alias": "pep",
+      "arma": "Sinclair",
+      "muerto": "no"
+    },
+    {
+      "alias": "Taik",
+      "arma": "Toys",
+      "muerto": "no"
+    },
+    {
+      "alias": "Pat",
+      "arma": "escoba",
+      "muerto": "no"
+    },
+    {
+      "alias": "Om",
+      "arma": "llave",
+      "muerto": "no"
+    },
+    {
+      "alias": "kin",
+      "arma": "loncha",
+      "muerto": "no"
+    },
+    {
+      "alias": "cto",
+      "arma": "Skynet",
+      "muerto": "no"
+    },
+    {
+      "alias": "clou",
+      "arma": "consola",
+      "muerto": "no"
+    },
+    {
+      "alias": "0f",
+      "arma": "café",
+      "muerto": "no"
+    },
+    {
+      "alias": "Ciber",
+      "arma": "huevo sexy",
+      "muerto": "no"
+    },
+    {
+      "alias": "ped",
+      "arma": "cerveza",
+      "muerto": "no"
+    },
+    {
+      "alias": "sei",
+      "arma": "poder",
+      "muerto": "no"
+    },
+    {
+      "alias": "VA",
+      "arma": "bola",
+      "muerto": "no"
+    },
+    {
+      "alias": "Sant",
+      "arma": "sol",
+      "muerto": "no"
+    },
+    {
+      "alias": "law",
+      "arma": "patin",
+      "muerto": "no"
+    },
+    {
+      "alias": "Carl",
+      "arma": "script",
+      "muerto": "no"
+    },
+    {
+      "alias": "sbar",
+      "arma": "montada",
+      "muerto": "no"
+    },
+    {
+      "alias": "Joel",
+      "arma": "mastín",
+      "muerto": "no"
+    },
+    {
+      "alias": "Jdl",
+      "arma": "antena",
+      "muerto": "no"
+    },
+    {
+      "alias": "Coke",
+      "arma": "megáfono",
+      "muerto": "no"
+    },
+    {
+      "alias": "ada",
+      "arma": "plátano",
+      "muerto": "no"
+    },
+    {
+      "alias": "Lau",
+      "arma": "arco",
+      "muerto": "no"
+    },
+    {
+      "alias": "psa",
+      "arma": "daga",
+      "muerto": "no"
+    },
+    {
+      "alias": "Clau",
+      "arma": "Mjolnir",
+      "muerto": "no"
+    },
+    {
+      "alias": "Pil",
+      "arma": "varita",
+      "muerto": "no"
+    },
+    {
+      "alias": "IPV",
+      "arma": "poder",
+      "muerto": "no"
+    },
+    {
+      "alias": "mig",
+      "arma": "Horus",
+      "muerto": "no"
+    },
+    {
+      "alias": "as",
+      "arma": "noise",
+      "muerto": "no"
+    },
+    {
+      "alias": "Kik",
+      "arma": "caja",
+      "muerto": "no"
+    },
+    {
+      "alias": "msn",
+      "arma": "gaitasita",
       "muerto": "no"
     }
   ]
