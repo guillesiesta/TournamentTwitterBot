@@ -24,7 +24,20 @@ def job():
         n=n+1
     else:
         if(n==1):
-             print("Sorteo realizado. Listos para la batalla."+str(n))
+            print("Sorteo realizado. Listas y listos para la batalla."+str(n))
+        if(n==34):
+            print("Primera ronda acabada. Así ha quedado el cuadro del torneo. Suerte a todas y a todos en la siguiente ronda."+str(n))
+        if(n==51):
+            print("Segunda ronda acabada. Así ha quedado el cuadro del torneo. Suerte a todas y a todos en la siguiente ronda."+str(n))
+        if(n==60):
+            print("¡Ya están aquí los cuartos de final! Esto se pone interesante. ¡Suerte a mis hackers!"+str(n))
+        if(n==65):
+            print("¡Ya están aquí las semifinales! Que tensión, no aguanto más. ¡Suerte a mis hackers!"+str(n))
+        if(n==68):
+            print("¡Ouuhhh mama! ¡Ya está aquí la final! ¿Quién ganará?"+str(n))
+        if(n==69):
+            print("Enhorabuena a"+str(n))
+                
         r = requests.post("http://hkr.es/services/updater.php",data=json.dumps(json_t), headers={'Content-Type': 'application/json'})
         print("Request done... "+str(n))
         print("Enviado json ->dans_test_"+str(n)+".json")
