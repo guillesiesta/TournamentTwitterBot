@@ -36,7 +36,7 @@ def job():
         if(n==68):
             print("¡Ouuhhh mama! ¡Ya está aquí la final! ¿Quién ganará?"+str(n))
         if(n==69):
-            print("Enhorabuena a"+str(n))
+            print("¡Enhorabuena!"+str(n))
                 
         r = requests.post("http://hkr.es/services/updater.php",data=json.dumps(json_t), headers={'Content-Type': 'application/json'})
         print("Request done... "+str(n))
