@@ -14,7 +14,7 @@ class Tournament():
 
     def printTournament(self):
         torneo={"torneo":self.torneo,"participantes":self.participantes,"rondas":self.getRondas(),"jugadores":self.jugadores}
-        print(json.dumps(torneo))
+        #print(json.dumps(torneo))
         return(torneo)
 
     def addRonda(self,lista):
