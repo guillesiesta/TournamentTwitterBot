@@ -6,11 +6,27 @@ import imgkit
 from json_operations import cargarJson
 from main_tournament import start
 from busca_tuit import buscar_ultimo_texto
+import tweepy
+from twittercredentials import TwitterCredentials as tw
+
+# personal details
+twi = tw()
+consumer_key = twi.consumer_key
+consumer_secret = twi.consumer_secret
+access_token = twi.access_token
+access_token_secret = twi.access_token_secret
+
+# authentication of consumer key and secret
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+
+# authentication of access token and secret
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth)
 
 # se llama a main_tournament, se crean todos los jsons del torneo
 #start()
 
-#se empieza en 0, que es el json donde aparecen los jugadores
+# se empieza en 0, que es el json donde aparecen los jugadores
 n=0
 
 
@@ -20,50 +36,54 @@ def takeJsonTournament(id):
 
 
 def job():
-	tuit = ""
-	global n
-	json_t = takeJsonTournament(n)
-	if(n==0):
-	    print("Tournament taken... "+str(n))
-	    n=n+1
-	else:
-	    if(n==1):
-	        print("Sorteo realizado. Listas y listos para la batalla."+str(n))
-	        tuit="Sorteo realizado. Listas y listos para la batalla."
-	    if(n==34):
-	        print("Primera ronda acabada. Así ha quedado el cuadro del torneo. Suerte a todas y a todos en la siguiente ronda."+str(n))
-	        tuit="Primera ronda acabada. Así ha quedado el cuadro del torneo. Suerte a todas y a todos en la siguiente ronda."
-	    if(n==51):
-	        print("Segunda ronda acabada. Así ha quedado el cuadro del torneo. Suerte a todas y a todos en la siguiente ronda."+str(n))
-	        tuit="Segunda ronda acabada. Así ha quedado el cuadro del torneo. Suerte a todas y a todos en la siguiente ronda."
-	    if(n==60):
-	        print("¡Ya están aquí los cuartos de final! Esto se pone interesante. ¡Suerte a mis hackers!"+str(n))
-	        tuit="¡Ya están aquí los cuartos de final! Esto se pone interesante. ¡Suerte a mis hackers!"
-	    if(n==65):
-	        print("¡Ya están aquí las semifinales! Que tensión, no aguanto más. ¡Suerte a mis hackers!"+str(n))
-	        tuit="¡Ya están aquí las semifinales! Que tensión, no aguanto más. ¡Suerte a mis hackers!"
-	    if(n==68):
-	        print("¡Ouuhhh mama! ¡Ya está aquí la final! ¿Quién ganará?"+str(n))
-	        tuit="¡Ouuhhh mama! ¡Ya está aquí la final! ¿Quién ganará?"
-	    if(n==69):
-	        print("¡Enhorabuena!"+str(n))
-	        tuit="¡Enhorabuena!"
-	            
-	    r = requests.post("http://hkr.es/services/updater.php",data=json.dumps(json_t), headers={'Content-Type': 'application/json'})
-	    print("Request done... "+str(n))
-	    print("Enviado json ->dans_test_"+str(n)+".json")
-	    time.sleep(5)
-	    # capturar torneo web
-	    # imgkit.from_url('http://www.hkr.es/', 'imgs/hkr'+str(n)+'.jpg')
-	    print("Capture done... "+str(n))
-	    time.sleep(2)
-	    # crear tweet y enviar
-	    if(tuit==""):
-	    	print("entra")
-	    	tuit = buscar_ultimo_texto(json_t)
-	    
-	    print("tuit :"+tuit)
-	    n=n+1
+    tuit = ""
+    global n
+    json_t = takeJsonTournament(n)
+    if(n == 0):
+        print("Tournament taken... "+str(n))
+        n = n+1
+    else:
+        if(n == 1):
+            print("Sorteo realizado. Listas y listos para la batalla."+str(n))
+            tuit = "Sorteo realizado. Listas y listos para la batalla."
+        if(n == 34):
+            print("Primera ronda acabada. Así ha quedado el cuadro del torneo. Suerte a todas y a todos en la siguiente ronda."+str(n))
+            tuit = "Primera ronda acabada. Así ha quedado el cuadro del torneo. Suerte a todas y a todos en la siguiente ronda."
+        if(n == 51):
+            print("Segunda ronda acabada. Así ha quedado el cuadro del torneo. Suerte a todas y a todos en la siguiente ronda."+str(n))
+            tuit = "Segunda ronda acabada. Así ha quedado el cuadro del torneo. Suerte a todas y a todos en la siguiente ronda."
+        if(n == 60):
+            print(
+                "¡Ya están aquí los cuartos de final! Esto se pone interesante. ¡Suerte a mis hackers!"+str(n))
+            tuit = "¡Ya están aquí los cuartos de final! Esto se pone interesante. ¡Suerte a mis hackers!"
+        if(n == 65):
+            print(
+                "¡Ya están aquí las semifinales! Que tensión, no aguanto más. ¡Suerte a mis hackers!"+str(n))
+            tuit = "¡Ya están aquí las semifinales! Que tensión, no aguanto más. ¡Suerte a mis hackers!"
+        if(n == 68):
+            print("¡Ouuhhh mama! ¡Ya está aquí la final! ¿Quién ganará?"+str(n))
+            tuit = "¡Ouuhhh mama! ¡Ya está aquí la final! ¿Quién ganará?"
+        if(n == 69):
+            print("¡Enhorabuena!"+str(n))
+            tuit = "¡Enhorabuena!"
+
+        r = requests.post("http://hkr.es/services/updater.php",
+                          data=json.dumps(json_t), headers={'Content-Type': 'application/json'})
+        print("Request done... "+str(n))
+        print("Enviado json ->dans_test_"+str(n)+".json")
+        time.sleep(5)
+        # capturar torneo web
+        imgkit.from_url('http://www.hkr.es/', 'imgs/hkr'+str(n)+'.jpg')
+        print("Capture done... "+str(n))
+        time.sleep(2)
+        # crear tweet y enviar
+        if(tuit == ""):
+            tuit = buscar_ultimo_texto(json_t)
+
+        print("Enviar tuit :"+tuit)
+
+        api.update_with_media('imgs/hkr'+str(n)+'.jpg', status=tuit)
+        n = n+1
 
 
 schedule.every(0.1).minutes.do(job)
