@@ -1,7 +1,7 @@
 import json
 
 class Combate():
-    def __init__(self, combate="combate",local="local", visitante="visitante", fecha="fecha", ganador="ganador",texto="texto"):
+    def __init__(self, combate="combate",local="local", visitante="visitante", fecha="fecha", ganador="ganador",texto=""):
         self.local=local
         self.visitante=visitante
         self.fecha=fecha
