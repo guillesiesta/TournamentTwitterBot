@@ -10,6 +10,7 @@ Tournament twitter bot in python.
     - Aclarar que la primera iteración no envía nada, simplemente carga el torneo. Habría que esperar hasta la segunda iteración para que envíe (post a web y a twitter)
 - Ejecutar el archivo empezar_torneo
     - __MUY IMPORTANTE__ . Cada vez que se ejecuta el archivo __empezar_torneo.py__ se van a crear y guardar jsons en la carpeta [code/jsons](https://github.com/guillesiesta/TournamentTwitterBot/tree/master/code/jsons) Si vas a realizar distintas iteraciones, es __muy necesario__ que esos archivos los borres manualmente para que funcione todo correctamente.
+- __Cada ejecución del programa hay que borrar los archivos .json generados en__ [code/jsons](https://github.com/guillesiesta/TournamentTwitterBot/tree/master/code/jsons)
 
 
 ## Librerias principales :-)
