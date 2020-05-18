@@ -12,7 +12,8 @@ Tournament twitter bot in python.
     - __MUY IMPORTANTE__ . Cada vez que se ejecuta el archivo __empezar_torneo.py__ se van a crear y guardar jsons en la carpeta [code/jsons](https://github.com/guillesiesta/TournamentTwitterBot/tree/master/code/jsons) Si vas a realizar distintas iteraciones, es __muy necesario__ que esos archivos los borres manualmente para que funcione todo correctamente.
 
 
-## Librerias usadas :-)
+## Librerias principales :-)
 
-[imgkit](https://pypi.org/project/imgkit/)
-[tweepy](https://www.tweepy.org/)
+- [imgkit](https://pypi.org/project/imgkit/)
+- [tweepy](https://www.tweepy.org/)
+- [schedule](https://pypi.org/project/schedule/)
