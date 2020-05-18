@@ -129,7 +129,7 @@ class Tournament():
         elif(jugador_ganador==visitante):
             texto_tuit = visitante + expresion + local + " con su "+self.findWeaponByName(visitante)
 
-        return texto_tuit
+        return texto_tuit+". Sigue el torneo en en http://www.hkr.es/ #HackersBattleRoyale"
 
     def findWeaponByName(self,name):
         weapon = ""
