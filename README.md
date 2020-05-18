@@ -4,7 +4,7 @@ Tournament twitter bot in python.
 ## Para hacerlo funcionar
 
 - __Instalar librerías__ con pip install -r requirements.txt
-- Instalar [xvfb y wkhtmltopdf](https://github.com/guillesiesta/TournamentTwitterBot/blob/master/PARA_LAS_CAPTURAS_DE_PANTALLA.txt) para poder realizar las __capturas de pantalla__ de la librería __imgkit__ de python.
+- __Instalar__ [xvfb y wkhtmltopdf](https://github.com/guillesiesta/TournamentTwitterBot/blob/master/PARA_LAS_CAPTURAS_DE_PANTALLA.txt) para poder realizar las __capturas de pantalla__ de la librería __imgkit__ de python.
 - __Insertar__ en el archivo [dans_tests_0.json](https://github.com/guillesiesta/TournamentTwitterBot/blob/master/code/jsons/dans_test_0.json) los __jugadores y sus armas__. 
 - __Actualizar el número de participantes__ en ese mismo json.
 - Ajustar parámetros del __scheduler__ en el archivo [empezar_torneo.py](https://github.com/guillesiesta/TournamentTwitterBot/blob/master/code/empezar_torneo.py) para que la función job se ejecute cada X tiempo o a X hora. 
