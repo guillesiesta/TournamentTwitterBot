@@ -1,0 +1,3 @@
+Es necesario instalar xvfb y wkhtmltopdf para que la librería imgkit que hace capturas de pantalla funcione:
+    sudo apt-get install xvfb
+    sudo apt-get install wkhtmltopdf
