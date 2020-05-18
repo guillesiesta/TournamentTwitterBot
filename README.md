@@ -9,7 +9,7 @@ Tournament twitter bot in python.
 - Ajustar parámetros del scheduler en el archivo [empezar_torneo.py](https://github.com/guillesiesta/TournamentTwitterBot/blob/master/code/empezar_torneo.py) para que la función job se ejecute cada X tiempo o a X hora. 
     - Aclarar que la primera iteración no envía nada, simplemente carga el torneo. Habría que esperar hasta la segunda iteración para que envíe (post a web y a twitter)
 - Ejecutar el archivo empezar_torneo
-    - ___ MUY IMPORTANTE ___ . Cada vez que se ejecuta el archivo ___empezar_torneo.py ___ se van a crear y guardar jsons en la carpeta [code/jsons](https://github.com/guillesiesta/TournamentTwitterBot/tree/master/code/jsons) Si vas a realizar distintas iteraciones, es ___muy necesario__ que esos archivos los borres manualmente para que funcione todo correctamente.
+    - __MUY IMPORTANTE__ . Cada vez que se ejecuta el archivo __empezar_torneo.py__ se van a crear y guardar jsons en la carpeta [code/jsons](https://github.com/guillesiesta/TournamentTwitterBot/tree/master/code/jsons) Si vas a realizar distintas iteraciones, es __muy necesario__ que esos archivos los borres manualmente para que funcione todo correctamente.
 
 
 ## Librerias usadas :-)
