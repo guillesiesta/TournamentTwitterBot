@@ -1,5 +1,5 @@
 # TournamentTwitterBot
-Tournament twitter bot in python.
+Torneo aleatorio creado en python para ser publicado en una web y en Twitter. Cada jugador compite con su arma. Aleatoreamente se hace un sorteo y se escoge al ganador de cada combate.
 
 ## Para hacerlo funcionar
 
